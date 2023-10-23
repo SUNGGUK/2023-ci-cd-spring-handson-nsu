@@ -2,19 +2,19 @@ name: Lint
 
 on:
   pull request:
-    push:
+  push:
 
-      jobs:
-        lint:
-          name: Lint
-          runs-on: ubuntu-latest
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
 
-          steps:
-            - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-            - uses: nikitasavinov/checkstyle-action@master
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: nikitasavinov/checkstyle-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
